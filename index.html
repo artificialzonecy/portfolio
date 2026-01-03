@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Artificial Zone — Creative Visual Studio</title>
+
+  <style>
+    :root {
+      --vibrant-coral: #ff595e;
+      --onyx: #0b0b0b;
+      --white-smoke: #f5f5f5;
+      --graphite: #2e2e2e;
+      --golden-bronze: #c9a24d;
+      --pale-slate: #bfc2c7;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--onyx);
+      color: var(--white-smoke);
+      line-height: 1.6;
+    }
+
+    section {
+      padding: 80px 20px;
+      position: relative;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1, h2, h3 {
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: var(--pale-slate);
+      max-width: 720px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 4px;
+      background: var(--golden-bronze);
+      color: var(--onyx);
+      font-weight: 600;
+      margin: 20px 10px 0 0;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .btn.secondary {
+      background: transparent;
+      border: 1px solid var(--golden-bronze);
+      color: var(--golden-bronze);
+    }
+
+    .btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 10px 25px rgba(201,162,77,0.35);
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-carousel {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .hero-carousel img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      animation: slideShow 20s infinite;
+      filter: brightness(0.7);
+    }
+
+    .hero-carousel img:nth-child(1) { animation-delay: 0s; }
+    .hero-carousel img:nth-child(2) { animation-delay: 5s; }
+    .hero-carousel img:nth-child(3) { animation-delay: 10s; }
+    .hero-carousel img:nth-child(4) { animation-delay: 15s; }
+
+    @keyframes slideShow {
+      0% { opacity: 0; }
+      10% { opacity: 0.65; }
+      25% { opacity: 0.65; }
+      35% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    .hero-title {
+      font-family: "Georgia", serif;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 500;
+    }
+
+    .hero .subtitle {
+      font-family: "Georgia", serif;
+      font-size: 1rem;
+      letter-spacing: 0.4px;
+      opacity: 0.9;
+      margin-top: 12px;
+    }
+
+    /* Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: var(--graphite);
+      padding: 30px;
+      border-radius: 8px;
+    }
+
+    /* Portfolio */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+      justify-items: center;
+    }
+
+    /* Light section */
+    .light {
+      background: var(--white-smoke);
+      color: var(--onyx);
+    }
+
+    .light p {
+      color: #444;
+    }
+
+    .cta {
+      text-align: center;
+    }
+    
+    .payment-section {
+      text-align: center;
+
+    }
+
+    footer {
+      background: #050505;
+      padding: 40px 20px;
+      text-align: center;
+      color: var(--pale-slate);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 60px 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-carousel">
+      <img src="image1.jpg" alt="">
+      <img src="image2.jpg" alt="">
+      <img src="image3.jpg" alt="">
+      <img src="image4.jpg" alt="">
+    </div>
+
+    <div class="container">
+      <h1 class="hero-title">Artificial Zone</h1>
+      <p class="subtitle">
+        Strategic photography & videography designed to elevate brands,
+        build trust, and create lasting impact.
+      </p>
+
+      <a href="#booking" class="btn">Book a Meeting</a>
+      <a href="#portfolio" class="btn secondary">View Portfolio</a>
+    </div>
+  </section>
+
+  <!-- WHO WE HELP -->
+  <section>
+    <div class="container">
+      <h2>Visuals built around your brand identity</h2>
+      <p>
+        We create visual content that adapts to each client’s culture, audience,
+        and goals. Through strategic photography and videography, we help brands
+        communicate with clarity, build credibility, and achieve the results they aim for.
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section>
+    <div class="container">
+      <h2>Services</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Photography</h3>
+          <p>High-end commercial and branding photography tailored to your identity.</p>
+        </div>
+        <div class="card">
+          <h3>Videography & Reels</h3>
+          <p>Story-driven video content designed for digital performance.</p>
+        </div>
+        <div class="card">
+          <h3>Creative Direction</h3>
+          <p>Concept development and visual storytelling from idea to delivery.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <div class="container">
+      <h2>Selected Work</h2>
+
+      <div class="portfolio-grid">
+
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DSFqAwrD3j-/" data-instgrm-version="14"></blockquote>
+
+<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DSkNiOtAhwK/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DSkNiOtAhwK/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DSkNiOtAhwK/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by YM Culinary Art Catering (@ymculinaryart)</a></p></div></blockquote>
+<script async src="//www.instagram.com/embed.js"></script>
+        
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DSfUw5JjOdg/" data-instgrm-version="14"></blockquote>
+
+      </div>
+
+      <script async src="//www.instagram.com/embed.js"></script>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section>
+    <div class="container">
+      <h2>How We Work</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>1. Discovery</h3>
+          <p>We understand your brand, audience, and objectives.</p>
+        </div>
+        <div class="card">
+          <h3>2. Strategy</h3>
+          <p>We design a visual approach aligned with your goals.</p>
+        </div>
+        <div class="card">
+          <h3>3. Production</h3>
+          <p>We deliver premium-quality visuals with consistency.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section id="booking" class="light">
+    <div class="container">
+      <h2>Book a Meeting</h2>
+      <p>Schedule a call to discuss your project and next steps.</p>
+      <!-- Here the embedded Calendly link will be added -->
+      <!-- Calendly inline widget begin -->
+<div class="calendly-inline-widget" data-url="https://calendly.com/ap-zymarides/30min?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=c09905" style="min-width:320px;height:700px;"></div>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<!-- Calendly inline widget end -->
+      
+      
+    </div>
+  </section>
+
+  <!-- PAYMENT -->
+  <section>
+    <div class="container payment-section">
+      <h2>Pre-Paid Services</h2>
+      <p>Secure your collaboration instantly through pre-payment of deposit.</p>
+      <br>
+      <!-- Here the embedded Stripe link will be added -->
+      
+      <script async
+  src="https://js.stripe.com/v3/buy-button.js">
+</script>
+
+<stripe-buy-button
+  buy-button-id="buy_btn_1SlSM61368hsI5jYJJXpshLS"
+  publishable-key="pk_live_51SlRuz1368hsI5jYEaCWoI2fUbqNw2UAmfAniUVYvrwTndXkZnrriQycJLDEkAxIvA7cq7U3qjsdNjlKgkWZ1aqw008VcktSM4"
+>
+</stripe-buy-button>
+      
+     
+      
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="light">
+    <div class="container">
+      <h2>Contact & Client Registration</h2>
+      <p>Leave your details to start a future collaboration.</p>
+      <!-- Here the embedded Google Form will be added -->
+      
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdChvuRFb7p8kobhsGsk-VgHx4GJk3UleW7o6sIoT5bQo321Q/viewform?embedded=true" width="640" height="999" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <h2>Let’s Build Your Visual Identity</h2>
+      <a href="#booking" class="btn">Get Started</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© Artificial Zone — Premium Visual Content Studio</p>
+  </footer>
+
+</body>
+</html>
