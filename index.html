@@ -171,8 +171,14 @@
       text-align: center;
     }
     
-    .payment-section {
+    .calendar-section, .payment-section, .contact-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
+      gap: 20px;
+    }
 
     }
 
@@ -285,7 +291,7 @@
 
   <!-- BOOKING -->
   <section id="booking" class="light">
-    <div class="container">
+    <div class="container calendar-section">
       <h2>Book a Meeting</h2>
       <p>Schedule a call to discuss your project and next steps.</p>
       <!-- Here the embedded Calendly link will be added -->
@@ -323,7 +329,7 @@
 
   <!-- CONTACT -->
   <section class="light">
-    <div class="container">
+    <div class="container contact-section">
       <h2>Contact & Client Registration</h2>
       <p>Leave your details to start a future collaboration.</p>
       <!-- Here the embedded Google Form will be added -->
