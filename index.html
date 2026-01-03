@@ -27,9 +27,7 @@
       color: var(--white-smoke);
       line-height: 1.6;
     }
-    #portfolio {
-      background-color: #f5f5f5;
-    }
+
     section {
       padding: 80px 20px;
       position: relative;
@@ -141,6 +139,14 @@
       padding: 30px;
       border-radius: 8px;
     }
+    
+    #portfolio {
+      background-color: #f5f5f5;
+      
+      h2 {
+        color: black;
+      }
+    }
 
     /* Portfolio */
     .portfolio-grid {
@@ -164,14 +170,10 @@
     .cta {
       text-align: center;
     }
-
+    
     .payment-section {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       text-align: center;
-      gap: 20px;
+
     }
 
     footer {
@@ -252,10 +254,9 @@
       <h2>Selected Work</h2>
 
       <div class="portfolio-grid">
-
         <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DSFqAwrD3j-/" data-instgrm-version="14"></blockquote>
-
-        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DSkNiOtAhwK/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"></blockquote>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DSfUw5JjOdg/" data-instgrm-version="14"></blockquote>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQ7A2eriDAw" data-instgrm-version="14"></blockquote>
 
         <script async src="//www.instagram.com/embed.js"></script>
 
@@ -289,10 +290,13 @@
     <div class="container">
       <h2>Book a Meeting</h2>
       <p>Schedule a call to discuss your project and next steps.</p>
+      <!-- Here the embedded Calendly link will be added -->
       <!-- Calendly inline widget begin -->
-      <div class="calendly-inline-widget" data-url="https://calendly.com/ap-zymarides/30min?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=c09905" style="min-width:320px;height:700px;"></div>
-      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-      <!-- Calendly inline widget end -->
+<div class="calendly-inline-widget" data-url="https://calendly.com/ap-zymarides/30min?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=c09905" style="min-width:320px;height:700px;"></div>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<!-- Calendly inline widget end -->
+      
+      
     </div>
   </section>
 
@@ -300,16 +304,22 @@
   <section>
     <div class="container payment-section">
       <h2>Pre-Paid Services</h2>
-      <p style="font-size:1.1rem; font-weight:500;">
-        Secure your collaboration instantly through pre-payment of deposit.
-      </p>
-      <!-- Stripe embed -->
-      <script async src="https://js.stripe.com/v3/buy-button.js"></script>
-      <stripe-buy-button
-        buy-button-id="buy_btn_1SlSM61368hsI5jYJJXpshLS"
-        publishable-key="pk_live_51SlRuz1368hsI5jYEaCWoI2fUbqNw2UAmfAniUVYvrwTndXkZnrriQycJLDEkAxIvA7cq7U3qjsdNjlKgkWZ1aqw008VcktSM4"
-      >
-      </stripe-buy-button>
+      <p>Secure your collaboration instantly through pre-payment of deposit.</p>
+      <br>
+      <!-- Here the embedded Stripe link will be added -->
+      
+      <script async
+  src="https://js.stripe.com/v3/buy-button.js">
+</script>
+
+<stripe-buy-button
+  buy-button-id="buy_btn_1SlSM61368hsI5jYJJXpshLS"
+  publishable-key="pk_live_51SlRuz1368hsI5jYEaCWoI2fUbqNw2UAmfAniUVYvrwTndXkZnrriQycJLDEkAxIvA7cq7U3qjsdNjlKgkWZ1aqw008VcktSM4"
+>
+</stripe-buy-button>
+      
+     
+      
     </div>
   </section>
 
@@ -318,7 +328,10 @@
     <div class="container">
       <h2>Contact & Client Registration</h2>
       <p>Leave your details to start a future collaboration.</p>
+      <!-- Here the embedded Google Form will be added -->
+      
       <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdChvuRFb7p8kobhsGsk-VgHx4GJk3UleW7o6sIoT5bQo321Q/viewform?embedded=true" width="640" height="999" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      
     </div>
   </section>
 
